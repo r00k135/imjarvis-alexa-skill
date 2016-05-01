@@ -1,0 +1,12 @@
+{
+    "intents":
+    [
+        {
+            "intent": "TempQueryIntent",
+            "slots": []
+        },
+        {
+          "intent": "AMAZON.HelpIntent"
+        }
+    ]
+}

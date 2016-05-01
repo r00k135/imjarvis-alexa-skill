@@ -1,0 +1,22 @@
+{
+  "session": {
+    "new": true,
+    "sessionId": "session1234",
+    "attributes": {},
+    "user": {
+      "userId": null
+    },
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.3e238ef7-d940-425f-b527-de6cc6de96f6"
+    }
+  },
+  "version": "1.0",
+  "request": {
+    "intent": {
+      "slots": [],
+      "name": "TempQueryIntent"
+    },
+    "type": "IntentRequest",
+    "requestId": "request5678"
+  }
+}

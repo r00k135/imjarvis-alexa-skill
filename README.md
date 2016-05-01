@@ -28,7 +28,7 @@ Alexa Skill to Query Home Systems - Implemented in NodeJS
 
 ## Functions Implemented
 
-Alexa, ask Kodi:
+Alexa, ask Jarvis:
 
 * whats the temperature outside - ask imjarvis what the outside temperature is
 

@@ -54,8 +54,8 @@ In order to build your zip file and upload, run the release.sh script:
 > ./release.sh
 
 ## imjarvis API
-* Get Active Players
-  > curl -s --data-binary '{"jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": 1}' -H 'content-type: application/json;' http://localhost/jsonrpc
+* Get Outside Temp
+  > curl -s --data-binary '{}' -H 'content-type: application/json;' http://localhost/temp/outside.py
 
 
 ## Appendix A: References

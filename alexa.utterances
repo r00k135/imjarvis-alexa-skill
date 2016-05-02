@@ -6,3 +6,11 @@ TempQueryIntent how warm is it outside
 TempQueryIntent if it's cold outside
 TempQueryIntent if it's warm outside
 TempQueryIntent if it's hot outside
+StartComputerIntent to start {Joanna's|OwnerName} computer
+StartComputerIntent to start {James's|OwnerName} computer
+StartComputerIntent to start {Daisy's|OwnerName} computer
+StartComputerIntent to start {Mikey's|OwnerName} computer
+StartComputerIntent to start {Michael's|OwnerName} computer
+StartComputerIntent to start {Chris's|OwnerName} computer
+StartComputerIntent to start {all|OwnerName} computers
+

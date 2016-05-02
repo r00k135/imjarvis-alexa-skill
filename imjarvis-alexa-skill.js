@@ -90,6 +90,8 @@ function onIntent(intentRequest, session, callback) {
     // Dispatch to your skill's intent handlers
     if ("TempQueryIntent" === intentName) {
         tempQueryIMJarvis(intent, session, callback);
+    } else if ("StartComputerIntent" === intentName) {
+        StartComputerIMJarvis(intent, session, callback);    
     } else {
         throw "Invalid intent";
     }
@@ -131,7 +133,7 @@ function tempQueryIMJarvis(intent, session, callback) {
     var shouldEndSession = true;
     var speechOutput = "";
 
-    var options = { host: imjarvisApiHost, port: imjarvisApiPort, path: imjarvisApiPath+"/temp/outside.json", method: 'POST', headers: { 'Content-Type': 'application/json' } };
+    var options = { host: imjarvisApiHost, port: imjarvisApiPort, path: imjarvisApiPath+"/temp/outside.py", method: 'POST', headers: { 'Content-Type': 'application/json' } };
     console.log('HTTP OPTIONS: ' + JSON.stringify(options));
 
     var post_data = '{}';
@@ -159,6 +161,59 @@ function tempQueryIMJarvis(intent, session, callback) {
     });
     req.write(post_data);
     req.end();
+}
+
+
+/**
+ * Asks IMJarvis Whats The Outside Temperature.
+ */
+function StartComputerIMJarvis(intent, session, callback) {
+    var cardTitle = intent.name;
+    var OwnerNameSlot = intent.slots.OwnerName;
+    var repromptText = "";
+    var sessionAttributes = {};
+    var shouldEndSession = true;
+    var speechOutput = "";
+
+    if (OwnerNameSlot.value) {
+        console.log('OwnerNameSlot Value: ' + OwnerNameSlot.value);
+        var options = { host: imjarvisApiHost, port: imjarvisApiPort, path: imjarvisApiPath+"/wol/turnon.py?computer="+OwnerNameSlot.value, method: 'GET', headers: { 'Content-Type': 'application/json' } };
+        console.log('HTTP OPTIONS: ' + JSON.stringify(options));
+
+        var post_data = '{}';
+        var req = http.request(options, function(res) {
+          console.log('STATUS: ' + res.statusCode); console.log('HEADERS: ' + JSON.stringify(res.headers)); console.log('DATA: ' + post_data);
+          if (res.statusCode == 200 ) {
+              res.setEncoding('utf8');
+              res.on('data', function (chunk) {
+                console.log('BODY: ' + chunk);
+                var response_json = JSON.parse(chunk);
+                if ( response_json.result ) {
+                    speechOutput = "Jarvis reports " + response_json.result;
+                } else {
+                   speechOutput = "Jarvis didn't respond";
+                }
+                repromptText = "";
+                callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+              });
+        }
+        else {
+            speechOutput = "Jarvis couldn't be contacted";
+            repromptText = "";
+            callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+        }
+        });
+        req.write(post_data);
+        req.end();
+    }
+    else {
+        console.log('OwnerNameSlot Not Set');
+        shouldEndSession = false;
+        speechOutput = "Which owners computer would you like to start";
+        repromptText = "Which owners computer would you like to start. You can tell the owner to start by saying, start chris's computer";
+        callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+    }
+
 }
 
 

@@ -6,6 +6,15 @@
             "slots": []
         },
         {
+            "intent": "StartComputerIntent",
+            "slots": [
+                {
+                    "name": "OwnerName",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
           "intent": "AMAZON.HelpIntent"
         }
     ]

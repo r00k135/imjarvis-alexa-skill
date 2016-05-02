@@ -11,7 +11,7 @@
 			"file": "imjarvis-alexa-skill.js",
 			"settings":
 			{
-				"buffer_size": 8803,
+				"buffer_size": 9280,
 				"line_ending": "Windows"
 			}
 		},
@@ -159,15 +159,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8803,
+						"buffer_size": 9280,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6592,
-								6592
+								7358,
+								7358
 							]
 						],
 						"settings":
@@ -177,7 +177,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2371.0,
+						"translation.y": 2490.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

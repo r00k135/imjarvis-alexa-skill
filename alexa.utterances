@@ -7,10 +7,27 @@ TempQueryIntent if it's cold outside
 TempQueryIntent if it's warm outside
 TempQueryIntent if it's hot outside
 StartComputerIntent to start {Joanna's|OwnerName} computer
+StartComputerIntent to turn on {Joanna's|OwnerName} computer
+StartComputerIntent to switch on {Joanna's|OwnerName} computer
+StartComputerIntent to start {Jo's|OwnerName} computer
+StartComputerIntent to turn on {Jo's|OwnerName} computer
+StartComputerIntent to switch on {Jo's|OwnerName} computer
 StartComputerIntent to start {James's|OwnerName} computer
+StartComputerIntent to turn on {James's|OwnerName} computer
+StartComputerIntent to switch on {James's|OwnerName} computer
 StartComputerIntent to start {Daisy's|OwnerName} computer
+StartComputerIntent to turn on {Daisy's|OwnerName} computer
+StartComputerIntent to switch on {Daisy's|OwnerName} computer
 StartComputerIntent to start {Mikey's|OwnerName} computer
+StartComputerIntent to turn on {Mikey's|OwnerName} computer
+StartComputerIntent to switch on {Mikey's|OwnerName} computer
 StartComputerIntent to start {Michael's|OwnerName} computer
+StartComputerIntent to turn on {Michael's|OwnerName} computer
+StartComputerIntent to switch on {Michael's|OwnerName} computer
 StartComputerIntent to start {Chris's|OwnerName} computer
+StartComputerIntent to turn on {Chris's|OwnerName} computer
+StartComputerIntent to switch on {Chris's|OwnerName} computer
 StartComputerIntent to start {all|OwnerName} computers
+StartComputerIntent to turn on {all|OwnerName} computers
+StartComputerIntent to switch on {all|OwnerName} computers
 
